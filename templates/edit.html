@@ -1,0 +1,79 @@
+{{define "edit"}} 
+{{template "_head"}}
+
+  <body>
+   {{template "_nav"}}
+
+    <main class="py-12 p-8">
+      <h3>Editing a product</h3>
+      <div class="divider"></div>
+      <form method="POST" action="update">
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Name</span>
+          </label>
+          <input
+            type="text"
+            autocomplete="off"
+            name="name"
+            value="{{.Name}}"
+            placeholder="Product name"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </div>
+
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Description</span>
+          </label>
+          <input
+            type="text"
+            autocomplete="off"
+            value="{{.Desc}}"
+            name="description"
+            placeholder="Description"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </div>
+
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Price</span>
+          </label>
+          <input
+            type="number"
+            name="price"
+            value="{{.Price}}"
+            placeholder="Price"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </div>
+
+        <div class="form-control w-full max-w-xs">
+          <label class="label">
+            <span class="label-text">Quantity</span>
+          </label>
+          <input
+            type="number"
+            name="quantity"
+            value="{{.Quantity}}"
+            placeholder="Quantity"
+            class="input input-bordered w-full max-w-xs"
+          />
+        </div>
+
+        <div class="mt-4">
+          <button
+            type="submit"
+            value="save"
+            class="btn btn-active text-gray-900 hover:text-white"
+          >
+            update
+          </button>
+          <a class="btn btn-ghost" href="/">back</a>
+        </div>
+      </form>
+    </main>
+  </body>
+</html>
+{{end}}
